@@ -138,7 +138,7 @@ def test_orthophoto_camera():
 
     ortho_cam = Cameras(cx=1.5, cy=1.5, fx=1.0, fy=1.0, camera_to_worlds=c2w, camera_type=CameraType.ORTHOPHOTO)
     ortho_rays = ortho_cam.generate_rays(camera_indices=0)
-    # campare with `PERSPECTIVE` to validate `ORTHOPHOTO`.
+    # compare with `PERSPECTIVE` to validate `ORTHOPHOTO`.
     pinhole_cam = Cameras(cx=1.5, cy=1.5, fx=1.0, fy=1.0, camera_to_worlds=c2w, camera_type=CameraType.PERSPECTIVE)
     pinhole_rays = pinhole_cam.generate_rays(camera_indices=0)
 
@@ -153,7 +153,7 @@ def test_orthophoto_camera():
 
 def test_multi_camera_type():
     """Test that the orthographic camera model works."""
-    # here we test two different camera types.
+    # Here we test two different camera types.
     num_cams = [2]
     c2w = torch.eye(4)[None, :3, :].broadcast_to(*num_cams, 3, 4)
     cx = torch.Tensor([20]).broadcast_to(*num_cams, 1)
