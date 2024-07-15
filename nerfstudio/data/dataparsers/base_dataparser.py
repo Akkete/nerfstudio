@@ -48,7 +48,7 @@ class Semantics:
 
 @dataclass
 class DataparserOutputs:
-    """Dataparser outputs for the which will be used by the DataManager
+    """Dataparser outputs which will be used by the DataManager
     for creating RayBundle and RayGT objects."""
 
     image_filenames: List[Path]
